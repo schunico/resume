@@ -1,0 +1,18 @@
+import openai
+
+openai.api_key = "INSERT HERE"
+
+engine = "text-davinci-003"
+prompt = "Tell me a joke"
+
+response = openai.Completion.create(
+    engine = engine,
+    prompt = prompt,
+    max_tokens = 1024,
+    n=1,
+    stop=None,
+    temperature = 0.7
+
+)
+
+print (response["choices"][0]["text"])
